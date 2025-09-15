@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        /* Embedded CSS */
+        @font-face {
+            font-family: 'Taviraj';
+            src: url('font-assets/Taviraj-Regular.ttf');
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Taviraj', serif;
+            background-color: #b32121;
+        }
+
+        header {
+            background-image: url("_images/header-bg (2).png");
+            background-size: cover;
+            width: 100%;
+            height: 650px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #menu, #close {
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            display: none; /* Hidden by default */
+        }
+
+        #menu {
+            background-image: url("_images/menu.png");
+        }
+
+        #close {
+            background-image: url("_images/close.png");
+            z-index: 10;
+            display: none;
+        }
+
+        #logo {
+            width: 382px;
+            height: 273px;
+            background-image: url("_images/shivaals-logo.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            left: -20px;
+            top: 10px;
+        }
+
+        #topLinks {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        #topLinks ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #topLinks ul li {
+            display: inline-block;
+            font-size: 1.2rem;
+            padding: 0 15px;
+        }
+
+        #topLinks ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #topLinks ul li a:hover {
+            color: #9b10d6;
+            text-shadow: 0 0 5px rgba(230, 12, 223, 0.8);
+        }
+
+        .currentPage {
+            color: white;
+            border: 1px solid white;
+            border-radius: 25px;
+            padding: 5px 15px;
+        }
+
+        /* Main Content Styles */
+        .about-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 2em;
+            color: #333;
+            margin: 0px auto;
+            font-weight: bold;
+            unicode-bidi: isolate;
+            background-color: white;
+            border-radius: 0px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 3000px;
+            max-height: 300px;
+        }
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .video-box {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-box video {
+            width: 100%;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .text-content {
+            flex: 2;
+            line-height: 1.7;
+            color: #e5e5e5;
+            font-size: 1.1em;
+            background: #9b10d6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-content p {
+            margin-bottom: 25px;
+        }
+
+        /* Mobile Menu Styles */
+        @media (max-width: 768px) {
+            header {
+                height: 300px;
+            }
+
+            #logo {
+                width: 120px;
+                height: 80px;
+                left: 10px;
+                top: 10px;
+            }
+
+            #menu {
+                display: block;
+            }
+
+            #topLinks {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: rgba(117, 0, 153, 0.95);
+                transform: none;
+                padding-top: 80px;
+                z-index: 5;
+            }
+
+            #topLinks ul li {
+                display: block;
+                margin: 20px 0;
+                padding: 0;
+            }
+
+            #topLinks.active {
+                left: 0;
+            }
+
+            .page-title {
+                max-width: 100%;
+                font-size: 2em;
+                margin: 20px auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            .video-box {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="menu" onclick="slideOn()"></div>
+        <div id="close" onclick="slideOff()"></div>
+        <div id="logo"></div>
+      
+        <nav id="topLinks">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="currentPage">About Me</li>
+                <li><a href="MyWork.html">My Work</a></li>
+                <li><a href="Reviews.html">Reviews</a></li>
+                <li><a href="ContactMe.html">Contact Me</a></li>
+            </ul>
+        </nav>    
+    </header>         
+
+    <div class="page-title">About Me</div>
+    
+    <div class="about-container">
+        <div class="content-wrapper">
+            <!-- Video Box (Left) -->
+            <div class="video-box">
+                <video controls poster="images/video-poster.jpg">
+                    <source src="videos/about-me.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <!-- Text Content (Right) -->
+            <div class="text-content">
+                <p>When I was in high school, I wasn’t sure what path to take, but I eventually embraced the creative route and began my Higher Certificate in Creative Development at Vega School. That experience solidified my love for design, and when it came time to specialize, I faced a tough choice between digital design, graphic design, game design, interior design, and copywriting. I chose digital design—the deciding factor was its focus on digital tools over the more physical aspects of graphic design.</p>
+                
+                <p>The first year was exhilarating; I immersed myself in Adobe software, using it to bring assignments to life. By the second year, I hit some challenges early on, but soon found my stride, mastering skills like web design and 3D rendering in Blender. Along the way, I discovered a passion for UI/UX design (especially through Figma) and fell in love with video editing, blending motion and storytelling into my projects.</p>
+                
+                <p>Now, as a graphic design graduate working at Hirt & Carter since early 2025, I reflect on how far I’ve come. This website showcases my journey—from my Higher Certificate work to my three years as a digital designer, including the 3D projects, photography, and video edits I enjoyed most. Every step—from campus experiments to professional projects—has shaped my multidisciplinary approach to design today.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function slideOn() {
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('close').style.display = 'block';
+            document.getElementById('topLinks').classList.add('active');
+        }
+        
+        function slideOff() {
+            document.getElementById('menu').style.display = 'block';
+            document.getElementById('close').style.display = 'none';
+            document.getElementById('topLinks').classList.remove('active');
+        }
+
+        // Show menu button on mobile
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) {
+                document.getElementById('menu').style.display = 'block';
+            } else {
+                document.getElementById('menu').style.display = 'none';
+                document.getElementById('topLinks').classList.remove('active');
+            }
+        });
+
+        // Initialize on load
+        if (window.innerWidth <= 768) {
+            document.getElementById('menu').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

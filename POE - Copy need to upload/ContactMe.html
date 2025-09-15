@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="css-assets/styles.css">
+    <style>
+        .signature-bg {
+            height:150px;
+            width:500px;
+            padding:0px;
+            position: relative;
+        }
+        .signature-bg-red{
+            background-color:#c20000;
+            border: 5px solid black;
+        }
+
+        .signature-image {
+            height:119px;
+            width:120px;
+            border-radius:100px;
+            background-image: url("_images/Me (1).jpg");
+            background-size: cover;
+            position: absolute;
+            left: 15px;
+            top: 6px;
+        }
+
+        .side-bg {
+            height:150px;
+            width:46px;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+
+        .side-bg-maroon {
+            background-color:#834040;
+        }
+
+        .details-box {
+            position: absolute;
+            left: 175px;
+            color: black;
+        }
+
+        .heading{
+            font-size: 28px;
+            margin: 0px;
+            font-weight: lighter;
+        }
+
+        .sub-heading{
+            font-size: 19px;
+            margin: 0px;
+            font-weight: lighter;
+        }
+
+        .details-line{
+            margin: 0px;
+            margin-top: 3px;
+            letter-spacing: 2px;
+        }
+
+        .details-icon{
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .details-link{
+            color: black;
+            text-decoration: none;
+        }
+
+        .side-bg-icon {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="menu" onclick="slideOn()"></div>
+        <div id="close" onclick="slideOff()"></div>
+        <div id="logo"></div>
+        <nav id="topLinks">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutMe.html">About Me</a></li>
+                <li><a href="MyWork.html">My Work</a></li>
+                <li><a href="Reviews.html">Reviews</a></li>
+                <li class="currentPage">Contact Me</li>
+            </ul>
+        </nav>
+    </header>
+       <h1>contact</h1>
+    <main>
+ 
+        <div class="signature-bg signature-bg-red">
+            <div class="signature-image"></div>
+            <div class="details-box">
+                <h1 class="heading">Shivaal Maharaj</h1>
+                <h2 class="sub-heading">Digital Design</h2>
+                <p class="details-line">
+                    <img src="_images/phone.png" alt="Phone Icon" class="details-icon"><a href="tel:0714930926" class="details-link">0714930926</a>
+                </p>
+                <p class="details-line">
+                    <img src="_images/mail.png" alt="Emai Icon" class="details-icon"><a href="mailto:shivaalmaharaj1@gail.com" class="details-link">shivaalmaharaj1@gmail.com</a>
+                </p>
+                <p class="details-line">
+                    <img src="_images/link.png" alt="Link Icon" class="details-icon"><a href="http://www.shivaalportfolio.co.za/" class="details-link">shivaalportfolio</a>
+                </p>
+            </div>
+            <div class="side-bg side-bg-maroon">
+                <a href="https://www.facebook.com/profile.php?id=61550123243826&mibextid=ZbWKwL" class="details-link">
+                    <img src="_images/facebook.png" alt="Facebook Icon" class="side-bg-icon">
+                </a><br>
+                <a href="https://www.instagram.com/shivaal_maharaj?igsh=ZWp4MGltbTFkdmQ=" class="details-link">
+                    <img src="_images/IG.png" alt="Instagram Icon" class="side-bg-icon">
+                </a><br>
+                <a href="https://www.linkedin.com/in/shivaal-maharaj-529311169?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="details-link">
+                    <img src="_images/linkedin.png" alt=" linkedin Icon" class="side-bg-icon">
+                </a>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        function slideOn(){
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('close').style.display = 'block';
+            document.getElementById('topLinks').classList.add('active');
+        }
+        function slideOff(){
+            document.getElementById('menu').style.display = 'block';
+            document.getElementById('close').style.display = 'none';
+            document.getElementById('topLinks').classList.remove('active');
+        }
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) {
+                document.getElementById('menu').style.display = 'block';
+            } else {
+                document.getElementById('menu').style.display = 'none';
+                document.getElementById('close').style.display = 'none';
+                document.getElementById('topLinks').classList.remove('active');
+            }
+        });
+
+        if (window.innerWidth <= 768) {
+            document.getElementById('menu').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
